@@ -1,34 +1,33 @@
-# 🏦 Bank Management System (C++ OOP)
+# Bank Management System - OOP (C++)
 
-A console-based Bank Management System built in **C++** demonstrating core **Object-Oriented Programming (OOP)** principles. The system provides an interactive role-based menu for Customers, Employees, and the Bank Manager.
+A console-based bank management system written in C++ that models a bank with object-oriented design.
 
----
+## Features
+- Customer role: deposit, withdraw, check balance, request a loan, check loan
+- Employee role: choose a department (11 departments) and assist customers
+- Manager role: add employees, remove employees, generate an employee report
+- Input validation for IDs, ages, salaries and balances
 
-## ✨ Features
+## OOP Concepts Used
+- Inheritance: `Person` -> `Customer`, `Person` -> `Employee` -> `Manager`
+- Encapsulation: private data members with public methods
+- Composition: `Bank` holds a list of customers and a manager
 
-### 👤 Customer Portal
-* **Create Account:** Register new customers with ID, Name, Age, Address, and Initial Balance.
-* **Deposit & Withdraw:** Perform secure transactions with balance and positive-amount validation.
-* **Balance Inquiry:** Check current account balance at any time.
-* **Loan System:** Request new loans and track total loan balance.
+## Technologies
+- C++, STL `vector`
 
-### 💼 Employee Portal
-* **Department Assignment:** Assign employees across 11 specialized bank departments (Customer Service, Credit, Risk Management, IT, HR, etc.).
-* **Customer Assistance:** Simulate active customer support operations.
+## How to Run
+1. Download `main.cpp`
+2. Compile: `g++ main.cpp -o bank_oop`
+3. Run: `bank_oop` (Windows) or `./bank_oop` (Linux/Mac)
 
-### 📊 Manager Portal
-* **Add Employees:** Register new staff members with salary and department details.
-* **Remove Employees:** Delete existing employees from the system using their ID.
-* **Generate Reports:** Display a complete report of all registered bank employees.
+## Limitations
+- Data is stored in memory only and is lost when the program exits
+- No authentication for customers, employees or the manager
+- Non-numeric input in some prompts is not handled
+- Customer IDs are not checked for uniqueness
 
----
-
-## 🛠️ OOP & C++ Concepts Applied
-
-* **Inheritance (Hierarchical & Multilevel):**
-  * `Customer` and `Employee` inherit from the base class `Person`.
-  * `Manager` inherits from `Employee` (`Person` ➔ `Employee` ➔ `Manager`).
-* **Encapsulation & Data Hiding:** All class attributes are kept `private` and accessed via `public` getters, setters, and methods.
-* **Composition (Has-A Relationship):** The `Bank` class manages a `Manager` object and a dynamic list of `Customer` objects.
-* **STL Vectors (`std::vector`):** Used for dynamic storage and management of customers and employees.
-* **Input Validation:** Implemented using `do-while` loops to prevent negative IDs, ages, salaries, or invalid transactions.
+## Future Improvements
+- Add login with passwords
+- Save data to files or a database
+- Add polymorphism (e.g. a virtual `display()` for each role)
